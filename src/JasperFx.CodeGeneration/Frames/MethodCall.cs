@@ -310,8 +310,6 @@ public class MethodCall : Frame
         {
             writer.BlankLine();
         }
-
-        Next?.GenerateCode(method, writer);
     }
 
     private string invocationCode()

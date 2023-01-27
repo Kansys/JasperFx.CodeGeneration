@@ -60,7 +60,6 @@ public class CodeFrame : Frame, ICodeFrame
 
         // TODO -- It's important to use Write() and not WriteLine() here.
         writer.Write(code);
-        Next?.GenerateCode(method, writer);
     }
 
     public override IEnumerable<Variable> FindVariables(IMethodVariables chain)

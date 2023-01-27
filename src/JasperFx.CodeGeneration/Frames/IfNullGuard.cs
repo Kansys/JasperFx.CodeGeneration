@@ -31,8 +31,6 @@ public class IfNullGuard : Frame
         foreach (var frame in _existsPath) frame.GenerateCode(method, writer);
 
         IfStyle.Else.Close(writer);
-
-        Next?.GenerateCode(method, writer);
     }
 
     public override IEnumerable<Variable> FindVariables(IMethodVariables chain)

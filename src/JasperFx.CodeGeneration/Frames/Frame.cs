@@ -27,10 +27,6 @@ public class CommentFrame : SyncFrame
     public override void GenerateCode(GeneratedMethod method, ISourceWriter writer)
     {
         writer.WriteComment(_commentText);
-
-        // It's on you to call through to a possible next
-        // frame to let it generate its code
-        Next?.GenerateCode(method, writer);
     }
 }
 

@@ -26,8 +26,6 @@ public abstract class CompositeFrame : Frame
         }
 
         generateCode(method, writer, _inner[0]);
-
-        Next?.GenerateCode(method, writer);
     }
 
     protected abstract void generateCode(GeneratedMethod method, ISourceWriter writer, Frame inner);

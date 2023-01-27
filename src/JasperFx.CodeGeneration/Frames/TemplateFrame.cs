@@ -35,7 +35,6 @@ public abstract class TemplateFrame : SyncFrame
         foreach (var proxy in _proxies) code = proxy.Substitute(code);
 
         writer.Write(code);
-        Next?.GenerateCode(method, writer);
     }
 
     public sealed override IEnumerable<Variable> FindVariables(IMethodVariables chain)

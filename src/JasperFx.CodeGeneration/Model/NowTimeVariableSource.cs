@@ -46,7 +46,6 @@ public class NowFetchFrame : SyncFrame
     public override void GenerateCode(GeneratedMethod method, ISourceWriter writer)
     {
         writer.WriteLine($"var {Variable.Usage} = {Variable.VariableType.FullName}.{nameof(DateTime.UtcNow)};");
-        Next?.GenerateCode(method, writer);
     }
 }
 

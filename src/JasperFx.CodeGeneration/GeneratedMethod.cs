@@ -133,8 +133,12 @@ public class GeneratedMethod : IGeneratedMethod
 
         writer.Write($"BLOCK:public {returnValue} {MethodName}({arguments})");
 
-
-        _top.GenerateCode(this, writer);
+        var current = _top;
+        do
+        {
+            current.GenerateCode(this, writer);
+            current = current.Next;
+        } while (current != null);
 
         writeReturnStatement(writer);
 

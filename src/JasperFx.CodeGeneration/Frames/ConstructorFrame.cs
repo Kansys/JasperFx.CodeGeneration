@@ -122,7 +122,6 @@ public class ConstructorFrame : SyncFrame
                 writer.Write(Declaration() + ";");
                 ActivatorFrames.Write(method, writer);
 
-                Next?.GenerateCode(method, writer);
                 break;
 
             case ConstructorCallMode.ReturnValue:
@@ -132,12 +131,10 @@ public class ConstructorFrame : SyncFrame
                     ActivatorFrames.Write(method, writer);
 
                     writer.Write($"return {Variable.Usage};");
-                    Next?.GenerateCode(method, writer);
                 }
                 else
                 {
                     writer.Write($"return {Invocation()};");
-                    Next?.GenerateCode(method, writer);
                 }
 
                 break;
@@ -153,7 +150,6 @@ public class ConstructorFrame : SyncFrame
                 }
 
                 ActivatorFrames.Write(method, writer);
-                Next?.GenerateCode(method, writer);
                 break;
         }
     }
